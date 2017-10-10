@@ -11,6 +11,12 @@ package sortalgorithms;
  */
 public class HeapSort {
 
+    /**
+     * Ta metoda używana jest do sortowania kopcowego tablicy zawierającej
+     * elementy typu int
+     *
+     * @param argv Tablica do posortowania
+     */
     public void sort(int[] argv) {
         int n = argv.length;
         for (int i = n / 2 - 1; i >= 0; i--) {//przeszukiwania rozpoczynamy od ostatniego ojca n/2-1 - indeks ost. ojca
@@ -23,7 +29,14 @@ public class HeapSort {
         }//tutaj zamieniamy ostatni element z początkiem, przechodzimy po kolejnych elementach kopca od korzenia, sprawdzając czy spełniony jest warunek kopca(rekurencja)
     }
 
-    private void heapArray(int[] argv, int w, int parentIndex) {//tutaj sprawdzamy warunek kopca: w - wielkosc tablicy do sprawdzenia, parentIndex - indeks rodzica
+    /**
+     * Ta metoda używana jest do sprawdzania warunku kopca
+     *
+     * @param argv Tablica do posortowania
+     * @param w Wielkość tablicy do sprawdzenia
+     * @param parentIndex Indeks rodzica
+     */
+    private void heapArray(int[] argv, int w, int parentIndex) {
 
         int larger = parentIndex;//zakladamy ze rodzic jest najwiekszym elementem
         int leftChild = 2 * parentIndex + 1;//ustalamy indeks lewego dziecka
@@ -40,26 +53,37 @@ public class HeapSort {
             swap(argv, parentIndex, larger);
             heapArray(argv, w, larger);//sprawdzaj rekurencyjnie warunek kopca do momentu gdzy znajdzesz rodzica, którego dzieci są od niego mniejsze
         }
-
-
-        /*-znajdz wiekszego syna, jeslli istnieje
-            -swap wiekszy syn z mniejszym ojcem
-            -przejdz rekurencyjnie po wszystkich synach az do momentu gdy znajdziesz ojca bez synow??? lub zaden z nich nie bedzie wiekszy od ojca*/
-        //zamien ostatni element tablicy args[] z korzeniem (root node)
     }
 
-    public void swap(int[] array, int x, int y) {
+    /**
+     * Metoda ta zamienia ze sobą miejscami dwa elementy tablicy
+     *
+     * @param array tablica w której chcemy dokonać zamiany
+     * @param x indeks pierwszego elementu tablicy
+     * @param y indeks drugiego elementu tablicy
+     */
+    private void swap(int[] array, int x, int y) {
         int tmp = array[x];
         array[x] = array[y];
         array[y] = tmp;
     }
 
+    /**
+     * Ta metoda sortuje tablicę w sposób malejący
+     *
+     * @param argv tablica do posortowania
+     */
     public void sortDesc(int[] argv) {
         sort(argv);
         reverseArray(argv);
     }
 
-    public void reverseArray(int[] array) {
+    /**
+     * Metoda ta odwraca tablicę posortowaną algorytmem HeapSort
+     *
+     * @param array
+     */
+    private void reverseArray(int[] array) {
         int n = array.length;
         int i, j;
         int tmp;
