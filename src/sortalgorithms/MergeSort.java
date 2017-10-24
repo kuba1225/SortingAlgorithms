@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sortalgorithms;
 
 /**
@@ -41,7 +36,7 @@ public class MergeSort {
 
     private void mergeSort(int[] T, int l, int r) {
         if (l < r) {
-            int m = (l + r) / 2;//m = l + (r - l) / 2;
+            int m = l + (r - l) / 2;
             mergeSort(T, l, m);
             mergeSort(T, m + 1, r);
             merge(T, l, m, r);
