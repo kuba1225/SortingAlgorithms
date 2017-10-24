@@ -24,13 +24,13 @@ public class SortAlgorithms {
         InsertSort is = new InsertSort();
 
         System.out.println("~~~~~~HEAPSORT~~~~~~");
-        double[] vd = new double[10];
-        generateRandomValues(vd);
-        System.out.println("Łańcuch przed posortowaniem: \t" + arrayToString(vd));
+        int[] vi0 = new int[10];
+        generateRandomValues(vi0);
+        System.out.println("Łańcuch przed posortowaniem: \t" + arrayToString(vi0));
         start = System.nanoTime();
-        h2.sort(vd);
+        h2.sort(vi0);
         stop = System.nanoTime();
-        System.out.println("Łańcuch po posortowaniu: \t" + arrayToString(vd));
+        System.out.println("Łańcuch po posortowaniu: \t" + arrayToString(vi0));
         System.out.println("Czas sortowania tablicy: " + (stop - start) + " ns");
         System.out.println();
 

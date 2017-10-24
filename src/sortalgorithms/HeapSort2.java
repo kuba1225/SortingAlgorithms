@@ -11,7 +11,7 @@ package sortalgorithms;
  */
 public class HeapSort2 {
 
-    public void sort(double[] t) {
+    public void sort(int[] t) {
         for (int i = 1; i < t.length; i++) {
             heapUp(t, i);
         }
@@ -22,7 +22,7 @@ public class HeapSort2 {
         }
     }
 
-    private void heapUp(double[] h, int n) {
+    private void heapUp(int[] h, int n) {
         int i = n;
         while (i > 0) {
             if (h[(i - 1) / 2] < h[i]) {
@@ -34,7 +34,7 @@ public class HeapSort2 {
         }
     }
 
-    private void heapDown(double[] t, int n) {
+    private void heapDown(int[] t, int n) {
         int i = 0;
         int c = 2 * i + 1;
         while (c < n) {
@@ -52,8 +52,8 @@ public class HeapSort2 {
         }
     }
 
-    private void swap(double[] t, int i, int j) {
-        double tmp = t[i];
+    private void swap(int[] t, int i, int j) {
+        int tmp = t[i];
         t[i] = t[j];
         t[j] = tmp;
     }

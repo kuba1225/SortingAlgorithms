@@ -47,25 +47,4 @@ public class MergeSort {
             merge(T, l, m, r);
         }
     }
-
-    public static void main(String[] args) {
-        MergeSort ms = new MergeSort();
-        int[] v = {6, 5, 2, 1, 3, 8, 7, 9, 4};
-        System.out.println(arrayToString(v));
-        ms.sort(v);
-        System.out.println(arrayToString(v));
-    }
-
-    public static String arrayToString(int[] array) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[");
-        for (int i = 0; i < array.length; i++) {
-            sb.append(array[i]);
-            if (i < array.length - 1) {
-                sb.append(", ");
-            }
-        }
-        sb.append("]");
-        return sb.toString();
-    }
 }
