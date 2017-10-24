@@ -11,7 +11,7 @@ package sortalgorithms;
  */
 public class HeapSort2 {
 
-    public void hsort(double[] t) {
+    public void sort(double[] t) {
         for (int i = 1; i < t.length; i++) {
             heapUp(t, i);
         }
