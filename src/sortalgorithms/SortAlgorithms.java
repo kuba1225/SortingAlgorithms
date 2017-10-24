@@ -16,6 +16,7 @@ public class SortAlgorithms {
         HeapSort2 h2 = new HeapSort2();
         MergeSort ms = new MergeSort();
         QuickSort qs = new QuickSort();
+        QuickSortIterative qsi = new QuickSortIterative();
         InsertSort is = new InsertSort();
 
         System.out.println("~~~~~~HEAPSORT~~~~~~");
@@ -51,14 +52,25 @@ public class SortAlgorithms {
         System.out.println("Czas sortowania tablicy: " + (stop - start) + " ns");
         System.out.println();
 
-        System.out.println("~~~~~~INSERTSORT~~~~~~");
+        System.out.println("~~~~~~QUICKSORT_ITERATIVE~~~~~~");
         int[] vi3 = new int[10];
         generateRandomValues(vi3);
         System.out.println("Łańcuch przed posortowaniem: \t" + arrayToString(vi3));
         start = System.nanoTime();
-        is.sort(vi3);
+        qsi.sort(vi3);
         stop = System.nanoTime();
         System.out.println("Łańcuch po posortowaniu: \t" + arrayToString(vi3));
+        System.out.println("Czas sortowania tablicy: " + (stop - start) + " ns");
+        System.out.println();
+
+        System.out.println("~~~~~~INSERTSORT~~~~~~");
+        int[] vi4 = new int[10];
+        generateRandomValues(vi4);
+        System.out.println("Łańcuch przed posortowaniem: \t" + arrayToString(vi4));
+        start = System.nanoTime();
+        is.sort(vi4);
+        stop = System.nanoTime();
+        System.out.println("Łańcuch po posortowaniu: \t" + arrayToString(vi4));
         System.out.println("Czas sortowania tablicy: " + (stop - start) + " ns");
         System.out.println();
     }
