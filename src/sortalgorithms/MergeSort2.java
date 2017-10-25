@@ -4,10 +4,18 @@ package sortalgorithms;
  *
  * @author Kuba
  */
-public class MergeSort {
+public class MergeSort2 {
 
-    public void sort(int[] T) {
-        mergeSort(T, 0, T.length - 1);
+    public void sort(int[] t) {
+        mergeSort(t, t.length - 1);
+    }
+
+    private void mergeSort(int[] t, int n) {
+        for (int p = 1; p <= n; p *= 2) {
+            for (int i = 0; i <= n - p; i += 2 * p) {
+                merge(t, i, i + p - 1, min(n, i + 2 * p - 1));
+            }
+        }
     }
 
     private void merge(int[] T, int left, int middle, int right) {
@@ -31,15 +39,9 @@ public class MergeSort {
         while (i <= middle) {
             T[x++] = tmpT[i++];
         }
-
     }
 
-    private void mergeSort(int[] T, int l, int r) {
-        if (l < r) {
-            int m = l + (r - l) / 2;
-            mergeSort(T, l, m);
-            mergeSort(T, m + 1, r);
-            merge(T, l, m, r);
-        }
+    private int min(int a, int b) {
+        return a < b ? a : b;
     }
 }
